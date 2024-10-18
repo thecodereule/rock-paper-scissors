@@ -31,10 +31,6 @@ body {
     flex-direction: column;
 }
 
-.main {
-  flex: 1;
-}
-
 
 header.header {
     background-color: var(--header);
@@ -57,6 +53,7 @@ header.header {
   .main {
     text-align: center;
     margin-top: 40px;
+    flex: 1;
   }
 
   .scoreboard {
