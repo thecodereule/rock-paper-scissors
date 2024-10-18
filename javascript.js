@@ -55,7 +55,7 @@ resetButton.addEventListener("click", () => {
     playerScoreElement.textContent = "Player: 0";
     computerScoreElement.textContent = "Computer: 0";
     roundResultDisplay.textContent = "Choose your weapon";
-    roundResultInfo.textContent = "First to score 5 points wins";
+    roundResultInfo.textContent = `Best of ${gameRounds} wins`;
     playerSign.textContent = "❔";
     computerSign.textContent = "❔";
 
