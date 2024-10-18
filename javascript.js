@@ -1,4 +1,4 @@
-const buttons = document.querySelectorAll("button");
+const gameButtons = document.querySelectorAll(".gameBtn");
 const playerSign = document.querySelector("#playerSign");
 const computerSign = document.querySelector("#computerSign");
 const computerScoreElement = document.querySelector("#computerScoreElement");
@@ -14,15 +14,19 @@ const overlay = document.querySelector("#overlay");
 let playerScore = 0;
 let computerScore = 0;
 let roundCounter = 0;
-const gameRounds = 3;
+const gameRounds = 10;
 
+/**
+ * Returns a random choice from the three possible rock-paper-scissors options.
+ * @return {string} One of "rock", "paper", or "scissors"
+ */
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
     const randomIndex = Math.floor(Math.random() * 3);
     return choices[randomIndex];
 }
 
-buttons.forEach((button) => {
+gameButtons.forEach((button) => {
     
     button.addEventListener("click", () => {
         const computerChoice = getComputerChoice();
@@ -37,9 +41,27 @@ buttons.forEach((button) => {
             declareWinner(playerScore, computerScore);
             modal.style.display = "block";
             overlay.style.display = "block";
-
         }
     })
+})
+
+resetButton.addEventListener("click", () => {
+   
+    playerScore = 0;
+    computerScore = 0;
+    roundCounter = 0;
+
+    // Update UI elements
+    playerScoreElement.textContent = "Player: 0";
+    computerScoreElement.textContent = "Computer: 0";
+    roundResultDisplay.textContent = "Choose your weapon";
+    roundResultInfo.textContent = "First to score 5 points wins";
+    playerSign.textContent = "❔";
+    computerSign.textContent = "❔";
+
+    // Hide modal and overlay
+    modal.style.display = "none";
+    overlay.style.display = "none";
 })
 
 function declareWinner(playerScore, computerScore) {
