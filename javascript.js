@@ -15,6 +15,7 @@ let playerScore = 0;
 let computerScore = 0;
 let roundCounter = 0;
 const gameRounds = 10;
+roundResultInfo.textContent = `Best of ${gameRounds} wins the game!`;
 
 /**
  * Returns a random choice from the three possible rock-paper-scissors options.
@@ -55,7 +56,7 @@ resetButton.addEventListener("click", () => {
     playerScoreElement.textContent = "Player: 0";
     computerScoreElement.textContent = "Computer: 0";
     roundResultDisplay.textContent = "Choose your weapon";
-    roundResultInfo.textContent = `Best of ${gameRounds} wins`;
+    roundResultInfo.textContent = `Best of ${gameRounds} wins the game!`;
     playerSign.textContent = "❔";
     computerSign.textContent = "❔";
 
