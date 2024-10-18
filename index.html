@@ -21,18 +21,18 @@
     <main class="main">
         <section class="scoreboard">
             <div class="container">
-                <h2 class="score-info">Choose your weapon</h2>
-                <h3 class="score-message">First to score 5 points wins the game</h3>
+                <h2 class="score-info" id="round-result-display">Choose your weapon</h2>
+                <h3 class="score-message" id="round-result-info">First to score 5 points wins the game</h3>
     
                 <div class="scores-container">
                     <div class="score-box">
                         <div class="sign" id="playerSign">❔</div>
-                        <p class="score" id="playerScore">Player: 0</p>
+                        <p class="score" id="playerScoreElement">Player: 0</p>
                     </div>
     
                     <div class="score-box">
                         <div class="sign" id="computerSign">❔</div>
-                        <p class="score" id="computerScore">Computer: 0</p>
+                        <p class="score" id="computerScoreElement">Computer: 0</p>
                     </div>
                 </div>
             </div>
@@ -65,6 +65,15 @@
             <i class="fa fa-github" style="font-size:36px; color:white"></i>
         </a>
     </footer>
+
+
+    <div class="modal" id="endgameModal">
+        <p class="modal-title" id="endgameMsg"></p>
+        <button class="btn btn-restart" id="restartBtn">Play again</button>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+
 </body>
 
 </html>
